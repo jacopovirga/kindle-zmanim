@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ricarica la pagina automaticamente ogni 4 ore (14400 secondi) -->
+    <meta http-equiv="refresh" content="14400">
+    <title>Zmanim Milano</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 20px; background-color: white; color: black; text-align: center;}
+        h1 { font-size: 3.5rem; margin-bottom: 5px; border-bottom: 5px solid black; padding-bottom: 10px; }
+        .date { font-size: 1.5rem; font-style: italic; margin-bottom: 25px; color: #333; }
+        .shabbat-box { border: 5px solid black; padding: 15px; margin-bottom: 30px; border-radius: 15px; }
+        .shabbat-box p { font-size: 2.5rem; margin: 10px 0; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; font-size: 2.2rem; }
+        td { padding: 18px 5px; border-bottom: 2px solid #000; text-align: left; }
+        td.time { text-align: right; font-weight: bold; font-size: 2.4rem; }
+    </style>
+</head>
+<body>
+    <h1>{{PARASHAH}}</h1>
+    <div class="date">Oggi: {{DATE}} (Milano)</div>
+
+    <div class="shabbat-box">
+        <p>🕯️ Candele: {{CANDLES}}</p>
+        <p>🍷 Havdallah: {{HAVDALAH}}</p>
+    </div>
+
+    <table>
+        <tr><td>Alot HaShachar</td><td class="time">{{ALOT}}</td></tr>
+        <tr><td>Netz (Alba)</td><td class="time">{{NETZ}}</td></tr>
+        <tr><td>Zman Shema (M"A)</td><td class="time">{{SHEMA_MA}}</td></tr>
+        <tr><td>Zman Shema (Gr"a)</td><td class="time">{{SHEMA_GRA}}</td></tr>
+        <tr><td>Chatzot</td><td class="time">{{CHATZOT}}</td></tr>
+        <tr><td>Mincha Gedola</td><td class="time">{{MINCHA}}</td></tr>
+        <tr><td>Shkiah (Tramonto)</td><td class="time">{{SHKIAH}}</td></tr>
+        <tr><td>Tzait Hakochavim</td><td class="time">{{TZAIT}}</td></tr>
+    </table>
+</body>
+</html>
