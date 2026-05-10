@@ -66,7 +66,7 @@ def main():
     html = html.replace('{{MINCHA}}', extract_time(times.get('minchaGedola', '')))
     html = html.replace('{{SHKIAH}}', extract_time(times.get('sunset', '')))
     # Per Tzait usiamo i 3 piccoli astri (circa 8.5 gradi o 50 min)
-    html = html.replace('{{TZAIT}}', extract_time(times.get('tzeit853deg', ''))) 
+    html = html.replace('{{TZAIT}}', extract_time(times.get('tzeit50min', ''))) 
 
     # 5. Salva il file finale
     with open('index.html', 'w', encoding='utf-8') as f:
