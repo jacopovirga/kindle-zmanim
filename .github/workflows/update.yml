@@ -1,0 +1,31 @@
+name: Aggiorna Zmanim Milano
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # Esegue ogni notte all'1:00 UTC
+  workflow_dispatch: # Questo pulsante ti permette di testarlo manualmente subito
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Genera il file index.html
+        run: python build.py
+
+      - name: Push del nuovo index.html
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add index.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-aggiornamento Zmanim" && git push)
