@@ -28,7 +28,7 @@ def main():
     url_zmanim = f"https://www.hebcal.com/zmanim?cfg=json&geonameid={GEONAMEID}"
     zmanim_data = fetch_json(url_zmanim)
     times = zmanim_data['times']
-    oggi = format_date(zmanim_data['date']['gregorian'])
+    oggi = format_date(zmanim_data['date'])
 
     # 2. Recupera Parashah e orari di Shabbat (m=50 minuti per Havdallah)
     url_shabbat = f"https://www.hebcal.com/shabbat?cfg=json&geonameid={GEONAMEID}&m=50"
